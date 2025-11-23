@@ -3,14 +3,10 @@ import java.util.List;
 
 public class Barco {
 
-    private final List<Pasajero> pasajeros = new ArrayList<>();
+    private List<Pasajero> listaOcupantes;
 
-    public Barco(List<Pasajero> pasajeros) {
-        this.pasajeros.addAll(pasajeros);
-    }
-
-    public boolean hayPasajeros(){
-        return !pasajeros.isEmpty();
+    public Barco(List<Pasajero> listaOcupantes) {
+        this.listaOcupantes = new ArrayList<>(listaOcupantes);
     }
 
 }
