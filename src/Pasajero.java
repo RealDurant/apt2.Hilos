@@ -1,34 +1,29 @@
 public class Pasajero {
 
-    private int id;
-    private int prioridad;
+    private int codigo;
+    private String categoria;
+    private int nivelPrioridad; // 1 = más urgente
 
-    public Pasajero(int id, int prioridad) {
-        this.id = id;
-        this.prioridad = prioridad;
+    public Pasajero(int codigo, String categoria, int nivelPrioridad) {
+        this.codigo = codigo;
+        this.categoria = categoria;
+        this.nivelPrioridad = nivelPrioridad;
     }
 
-    public int getId() {
-        return id;
+    public int getCodigo() {
+        return codigo;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public String getCategoria() {
+        return categoria;
     }
 
-    public int getPrioridad() {
-        return prioridad;
-    }
-
-    public void setPrioridad(int prioridad) {
-        this.prioridad = prioridad;
+    public int getNivelPrioridad() {
+        return nivelPrioridad;
     }
 
     @Override
     public String toString() {
-        return "Pasajero{" +
-                "id='" + id + '\'' +
-                ", prioridad='" + prioridad + '\'' +
-                '}';
+        return "P" + codigo + "(" + categoria + ", prioridad=" + nivelPrioridad + ")";
     }
 }
