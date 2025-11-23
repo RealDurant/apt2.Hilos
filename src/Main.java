@@ -23,5 +23,34 @@ public class Main {
             }
             listaPasajeros.add(new Pasajero(codigo, categoria, nivelPrioridad));
         }
+        Barco barco = new Barco(listaPasajeros);
+
+        // Crear las balsas
+        List<Balsa> balsas = new ArrayList<>();
+        balsas.add(new Balsa("Acasta", 1, 0.5));
+        balsas.add(new Balsa("Banff", 2, 1));
+        balsas.add(new Balsa("Cadiz", 3, 2));
+        balsas.add(new Balsa("Deimos", 4, 4));
+        balsas.add(new Balsa("Expedicion", 5, 8));
+
+
+        // lanzar hilos de rescate
+        List<Thread> hilos = new ArrayList<>();
+        for (Balsa b : balsas) {
+            Thread t = new Thread(new Rescate(b, barco));
+            hilos.add(t);
+            t.start();
+        }
+
+        for (Thread t : hilos) {
+            try {
+                t.join();
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+                System.out.println("Main interrumpido.");
+            }
+        }
+
+        System.out.println(" Rescate finalizado. Pasajeros restantes: " + barco.ocupantesPendientes());
     }
 }
