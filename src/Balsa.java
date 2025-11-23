@@ -9,5 +9,22 @@ public class Balsa {
         this.plazasMaximas = plazasMaximas;
         this.cicloSegundos = cicloSegundos;
     }
+    public String getIdBalsa() {
+        return idBalsa;
+    }
 
+    public int getPlazasMaximas() {
+        return plazasMaximas;
+    }
+
+    public double getCicloSegundos() {
+        return cicloSegundos;
+    }
+
+    @Override
+    public String toString() {
+        return "Balsa{ idBalsa='" + idBalsa + '\'' +
+                ", plazasMaximas=" + plazasMaximas +
+                ", cicloSegundos=" + cicloSegundos + " }";
+    }
 }
