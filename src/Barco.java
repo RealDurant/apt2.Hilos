@@ -26,4 +26,7 @@ public class Barco {
 
         return grupoSalvado;
     }
+    public int ocupantesPendientes() {
+        return listaOcupantes.size();
+    }
 }
