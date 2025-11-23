@@ -1,15 +1,13 @@
 public class Balsa {
 
-    private int capacidad;
-    private int tiempo;
+    private String idBalsa;
+    private int plazasMaximas;
+    private double cicloSegundos;
 
-    public Balsa(int capacidad, int tiempo) {
-        this.capacidad = capacidad;
-        this.tiempo = tiempo;
-    }
-
-    public int getCapacidad() {
-        return capacidad;
+    public Balsa(String idBalsa, int plazasMaximas, double cicloSegundos) {
+        this.idBalsa = idBalsa;
+        this.plazasMaximas = plazasMaximas;
+        this.cicloSegundos = cicloSegundos;
     }
 
 }
